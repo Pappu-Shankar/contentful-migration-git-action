@@ -1,0 +1,10 @@
+
+{
+  "name": "@pokemon/healthcheck",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "micro": "^9.3.4",
+    "supertest": "^6.0.1"
+  }
+}
