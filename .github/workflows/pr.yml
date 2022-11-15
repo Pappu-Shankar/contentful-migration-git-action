@@ -26,7 +26,7 @@ jobs:
       - name: Deploy Contentful
         id: migration
         uses: contentful/contentful-action@main
-        with:
+        env:
           delete_feature: false
           set_alias: true
           master_pattern: "prod-[DD].[MM].[YYYY]-[hh][mm][ss]"
