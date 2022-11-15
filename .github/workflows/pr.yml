@@ -52,6 +52,10 @@ jobs:
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
           MIGRATIONS_DIR: 'migrations'
+          FEATURE_PATTERN: sandbox-[branch]
+          DELETE_FEATURE: true
+          set_alias: true
+          
       - name: Comment Contentful Info
         uses: peter-evans/commit-comment@v1
         with:
