@@ -1,6 +1,8 @@
 // @ts-check
 /** @type import('contentful-migration').MigrationFunction */
 module.exports = function (migration) {
+
+	console.log("this Migration is started");
 	const navItem = migration
 		.createContentType('navItem')
 		.name('NavItem')
@@ -38,5 +40,6 @@ module.exports = function (migration) {
 	navHeader.createField('allowShoppingCart').type('Boolean').name('AllowShoppingCart');
 	navHeader.createField('allowSearch').type('Boolean').name('AllowSearch');
 
+	console.log("this Migration is Ended");
 	
 };
