@@ -55,9 +55,9 @@ jobs:
           feature_pattern: "sandbox-[branch]"
           version_field: version
           version_content_type: versionTracking
-          migrations_dir: test-migrations
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+          MIGRATIONS_DIR: test-migrations
 
       - name: Comment Contentful Info
         uses: peter-evans/commit-comment@v1
