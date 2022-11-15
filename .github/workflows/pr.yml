@@ -53,11 +53,11 @@ jobs:
           set_alias: true
           master_pattern: "prod-[DD].[MM].[YYYY]-[hh][mm][ss]"
           feature_pattern: "sandbox-[branch]"
-          version_field: version
-          version_content_type: versionTracking
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
           MIGRATIONS_DIR: test-migrations
+          VERSION_FIELD: version
+          VERSION_CONTENT_TYPE: versionTracking
 
       - name: Comment Contentful Info
         uses: peter-evans/commit-comment@v1
