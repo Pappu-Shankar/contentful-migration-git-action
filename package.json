@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      // "migration": "contentful space migration --space-id f76d85l4n9vc"
+      "migration": "contentful space migration --space-id f76d85l4n9vc"
     },
     "keywords": [],
     "author": "",
