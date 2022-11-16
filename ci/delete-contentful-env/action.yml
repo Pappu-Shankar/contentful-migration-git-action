@@ -2,7 +2,7 @@
 name: 'Delete Contentful Branch Environment'
 description: 'Delete Contentful Branch Environment as part of CI'
 runs:
-  using: 'node14'
+  using: 'node12'
   main: 'main.js'
 outputs:
   environment_name:
