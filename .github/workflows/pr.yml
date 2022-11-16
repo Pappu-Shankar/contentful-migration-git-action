@@ -28,6 +28,7 @@ jobs:
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
           MIGRATIONS_DIR: 'migrations'
+          set_alias: true
       - name: Comment Contentful Info
         uses: peter-evans/commit-comment@v1
         with:
