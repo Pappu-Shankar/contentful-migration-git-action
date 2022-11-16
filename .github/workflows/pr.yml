@@ -14,36 +14,12 @@ on:
       - ".github/workflows/pr.yml"
 
 jobs:
-  test:
-    name: Run tests
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-
-      - name: Uses Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
   deploy_contentful:
     name: Deploy Contentful Sandbox
     runs-on: ubuntu-latest
-    needs: test
-
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      
-      - name: Uses Node.js 14
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
 
       - name: Deploy Contentful
         id: migration
@@ -52,6 +28,7 @@ jobs:
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
           MIGRATIONS_DIR: 'migrations'
+          set_alias: true
       - name: Comment Contentful Info
         uses: peter-evans/commit-comment@v1
         with:
