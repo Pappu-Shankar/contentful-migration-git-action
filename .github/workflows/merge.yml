@@ -14,8 +14,7 @@ jobs:
       - name: Delete Contentful Environment
         id: deletion
         # if: github.event.pull_request.merged
-        # uses: ./utils/delete-contentful-environment
-        run: './utils/delete-contentful-env'
+        uses: ./ci/delete-contentful-env
         env:
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
